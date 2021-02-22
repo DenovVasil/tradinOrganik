@@ -1,24 +1,22 @@
 package com.dataox.tradin_organic.service.scraper;
 
-import com.dataox.tradin_organic.dao.entity.ScrapedUnit;
 import io.github.jonathanlink.PDFLayoutTextStripper;
 import lombok.AllArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.IteratorUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-import org.apache.tika.Tika;
 import org.apache.tika.io.TikaInputStream;
 import org.springframework.stereotype.Service;
-import technology.tabula.*;
+import technology.tabula.ObjectExtractor;
+import technology.tabula.Page;
+import technology.tabula.Table;
 import technology.tabula.extractors.SpreadsheetExtractionAlgorithm;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 

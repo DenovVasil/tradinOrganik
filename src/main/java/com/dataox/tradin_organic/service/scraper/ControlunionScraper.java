@@ -28,7 +28,9 @@ public class ControlunionScraper {
         Document doc = jsoupConnection.getDocument(BASE_URL);
         List<ScrapedUnit> list = doc.select(PDF_SELECTOR)
                 .stream()
-                .flatMap(elem -> controlunionParser.parse(elem.attr("abs:href")).stream())
+                .map(e -> e.attr("abs:href"))
+                .map(controlunionParser::parse)
+                .flatMap(List::stream)
                 .collect(toList());
         scrapedUnitRepo.saveAll(list);
     }
