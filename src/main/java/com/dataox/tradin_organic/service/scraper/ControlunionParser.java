@@ -22,8 +22,8 @@ public class ControlunionParser {
 
     public List<ScrapedUnit> parse(String url) {
         List<Table> tables = pdfConnection.extractRawText(Paths.get("src/main/resources/pdfTable.pdf"));
-        for (int i = 0; i < 7; i++) {
-            tables.get(3).getRows().remove(0);
+        for (int i = 0; i < 8; i++) {
+            tables.get(2).getRows().remove(0);
         }
         if (CollectionUtils.isEmpty(tables)) return null;
         return tables.stream()
@@ -34,7 +34,6 @@ public class ControlunionParser {
 
     private List<ScrapedUnit> getInfoFromTable(Table table) {
         return table.getRows().stream()
-                .skip(8)
                 .map(row -> {
                     ScrapedUnit scrapedUnit = new ScrapedUnit();
                     scrapedUnit.setCompanyName(row.get(2).getText());
