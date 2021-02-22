@@ -84,14 +84,17 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.11</version>
 		</dependency>
+		<dependency>
+			<groupId>technology.tabula</groupId>
+			<artifactId>tabula</artifactId>
+			<version>1.0.4</version>
+		</dependency>
 
-
-			<dependency>
-				<groupId> e-iceblue </groupId>
-				<artifactId>spire.pdf</artifactId>
-				<version>3.11.6</version>
-			</dependency>
-
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>

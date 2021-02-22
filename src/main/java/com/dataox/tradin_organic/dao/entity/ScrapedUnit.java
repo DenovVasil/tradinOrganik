@@ -18,7 +18,11 @@ public class ScrapedUnit {
     private String source;
     private String companyName;
     private String country;
+    private String address;
+    private String telephone;
+    private String email;
     private String certifiedActivities;
+    @Column(columnDefinition = "text")
     private String certifiedProducts;
 
     public ScrapedUnit(String source, String companyName, String country) {
